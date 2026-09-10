@@ -39,7 +39,7 @@ function checkout(){
  if(phone==="+2348146077326"){alert("Replace +2348146077326 in js/app.js with the company's WhatsApp number.");return}
  const lines=cart.map(x=>{const p=products.find(y=>y.id===x.id);return `• ${p.name} × ${x.qty} — ${money(p.price*x.qty)}`});
  const total=cart.reduce((a,x)=>a+products.find(p=>p.id===x.id).price*x.qty,0);
- const msg=`Hello CO Energy, I'd like to place an order:%0A%0A${encodeURIComponent(lines.join("\n"))}%0A%0A*Estimated total: ${money(total)}*%0A%0APlease let me know the next steps.`;
+ const msg=`Hello CO Energy Hub, I'd like to place an order:%0A%0A${encodeURIComponent(lines.join("\n"))}%0A%0A*Estimated total: ${money(total)}*%0A%0APlease let me know the next steps.`;
  window.open(`https://wa.me/${phone}?text=${msg}`,"_blank");
 }
 $$(".filter").forEach(b=>b.addEventListener("click",()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderProducts(b.dataset.category==="all"?products:products.filter(p=>p.category===b.dataset.category))}));
